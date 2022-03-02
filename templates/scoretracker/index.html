@@ -1,0 +1,26 @@
+{% extends 'scoretracker/base.html' %}
+{% load staticfiles %}
+{% load game_extras %}
+{% block title_block%}
+    Index
+{% endblock %}
+
+<style>
+
+</style>
+
+{% block body_block%}
+    {% if user.is_authenticated %}
+        <h2>
+            Games for {{user.username}}
+        </h2>
+    {% endif %}
+    {% if games %}
+    <ul class='game_overview_list'>
+        {% for game in games%}
+            {% get_game_data game user %}
+            <br/>
+        {% endfor %}
+    </ul>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,110 @@
+table, th, td {
+    border:3px solid black;
+    border-collapse: collapse;
+}
+
+
+body{
+    background-color: #333839;
+    font-family: "Courier New";
+    color: white;
+    text-align: center;
+}
+
+.standardHeader{
+    font-size: 30pt;
+    text-align: center;
+}
+
+.standardHeader h1{
+    font-size: 30pt;
+}
+
+.standardHeader h2{
+    font-size: 15pt;
+}
+
+footer{
+    position: fixed;
+    left: 0;
+    bottom: 10px;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+
+nav{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #6B7374;
+}
+
+nav a{
+    float: left;
+    display: block;
+    /* color: white; */
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: #111314;
+}
+
+
+.list{
+    text-align:center;
+}
+
+a {
+    color: white;
+}
+
+table{
+    background-color: white;
+    color: black;
+}
+
+.game_overview{
+    /* display:block; */
+    border:2px solid white;
+    display: inline-block;
+    width: 50%;
+    overflow: hidden;
+    text-align: center;
+    padding: 5px;
+}
+
+.game_overview_link {
+    text-decoration: none;
+}
+
+.game_overview_list {
+    list-style-type: none;
+}
+
+
+
+
+/* .login_form{
+    text-align: center;
+} */
+
+/* .login_form input {
+    display: block;
+    text-align: center;
+    float:inherit;
+} */
+
+
+.login_submit{
+    
+}
+
+
+.profile_list > ul{
+    list-style-type: none;
+}

@@ -1,0 +1,14 @@
+{% extends 'scoretracker/base.html' %}
+{% load staticfiles %}
+
+{% block title_block%}
+    Stats
+{% endblock %}
+
+{% block body_block%}
+    {% for other in users %}
+        {% if other.username != user.username %}
+        <img src="{% url 'scoretracker:gen_graph'%}?otheruser={{other}}"/>
+        {% endif %}
+    {% endfor %}
+{% endblock %} 

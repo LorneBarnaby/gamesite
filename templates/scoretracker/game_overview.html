@@ -1,0 +1,19 @@
+
+{% load game_extras %}
+
+<li >
+    <a class='game_overview_link' href = "{% url 'scoretracker:view_game' game.slug %}">
+    <div class='game_overview'>
+    
+        {{game}}
+        <br/>
+        Your Score: {{ user_score }}
+        <br/>
+        Players: 
+        {% for gameuser in gameusers %}
+        {{gameuser}}
+        {% endfor %}
+    
+    </div>
+    </a>
+</li>

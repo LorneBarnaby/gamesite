@@ -1,0 +1,32 @@
+<!DOCTYPE html> 
+{% load staticfiles %}
+{% load static %}
+<html>
+    <head>
+        <title>
+        ScoreTracker -
+        {% block title_block %}
+        {% endblock %}
+        </title>
+        <link rel="stylesheet" href="{% static 'styles/styles.css' %}"/>
+        {% block scripts%}
+        {% endblock %}
+    </head>
+    <body>
+        {% if user.is_authenticated %}
+        <nav>
+            <a href={% url 'scoretracker:index'%}> Home</a>
+            <a href={% url 'scoretracker:add_game'%}> Add a Game</a>
+            
+                <a href={% url 'scoretracker:profile'%}> Profile</a>
+                {% comment %} <a href={% url 'scoretracker:login'%}> Login</a> {% endcomment %}
+        {% endif %}
+            
+        </nav>
+        <div>
+        {% block body_block %} 
+        {% endblock %}
+        <div>
+        <hr/>
+    </body>
+</html>

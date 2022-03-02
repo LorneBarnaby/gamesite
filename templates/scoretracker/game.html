@@ -1,0 +1,60 @@
+{% extends 'scoretracker/base.html' %}
+{% load staticfiles %}
+
+
+{% block title_block %}
+    {{game.name}}
+{% endblock %}
+
+{% block scripts%}
+    <script src="{% static 'scripts/game.js' %}"></script>
+{% endblock %}
+
+{% block body_block%}
+
+<style>
+    body{
+        text-align:left;
+    }
+</style>
+    
+<form action="{% url 'scoretracker:add_scores' game.slug %}" method="POST">
+{% csrf_token %}
+    <table>
+        <tr>
+        <th>Date</th>
+        {% if users %}
+            {% for user in users %}
+                <th>{{user.username}}</th>
+            {% endfor %}
+        {% endif %}
+        </tr>
+        {% if rows %}
+        {% for row in rows %}
+        <tr>
+            <td>{{row.created_at | date:'d/m/Y' }}</td>
+            {% for column in row.columns %}
+                <td>{{column.value}}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+        {% endif %}
+        <tr>
+        <td>New Game:</td>
+        {% for user in users %}
+            <td><input type="number" name="{{ user.username }}_score" required></input></td>
+        {% endfor %}
+        </tr>
+    </table>
+    <input type="submit"/>
+</form>
+        
+
+{% if scores %}
+    <ul>
+        {% for score in scores %}
+        <li>{{score.user}}: {{score.value}}</li>
+        {% endfor %}
+    </ul>
+{% endif %} 
+{% endblock %}

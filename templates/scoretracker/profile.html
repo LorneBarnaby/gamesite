@@ -1,0 +1,17 @@
+{% extends 'scoretracker/base.html' %}
+{% load staticfiles %}
+
+
+{% block title_block %}
+    Add Game
+{% endblock %}
+
+
+{% block body_block %}
+    <div class='profile_list'>
+        <ul>
+            <li><a href="{% url 'scoretracker:view_stats' %}">My Stats</a></li>  
+            <li><a href="{% url 'scoretracker:logout' %}">Logout</a></li>
+        </ul>
+    </div>
+{% endblock %}

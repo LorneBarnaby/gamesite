@@ -1,0 +1,17 @@
+{% extends 'scoretracker/base.html' %}
+{% load staticfiles %}
+
+
+{% block title_block %}
+    Add Game
+{% endblock %}
+
+
+
+{% block body_block %}
+    <form method="POST" action="{% url 'scoretracker:add_game'%}">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit"/>
+    </form>
+{% endblock %}
